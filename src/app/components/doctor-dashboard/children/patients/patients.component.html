@@ -1,0 +1,91 @@
+<div class="container">
+    <button class="patient" *ngFor="let patient of patients">{{patient.name}}</button>
+    <div class="patient-page" *ngIf="showPatientPage">
+        <h1 style="color: white;">{{selectedPatient.name}}</h1>
+        <button class="ref">Refferal</button>
+        <button  class="sendlab">Send Lab</button>
+        <button class="prescription" routerLink="/prescription">prescription</button>
+        <button class="allergies" routerLink="/allergies">Allergies</button>
+        <button class="appointment" routerLink="/appointment">appointment</button>
+         <button class="vital-allergies" routerLink="/vital-allergies">Vital Allergies</button>
+
+         <button class="lab-results" routerLink="/lab-results">Lab-Results</button>
+
+        <button class="close">Close</button>
+        <button  class="end">End</button>
+    </div>
+    <div class="patient-page" *ngIf="showLabPage">
+        <h1 style="color: white;">{{selectedPatient.name}}</h1>
+        
+
+        <button class="close">Close</button>
+        <button  class="end">End</button>
+    </div>
+
+
+    <div class="refer-page" *ngIf="showReferPage">
+        <h3 style="color: white;">
+            Patient name: {{selectedPatient.name}}
+        
+        </h3>
+        <h3 style="color: white;">
+            Patient ID: {{selectedPatient.id}}
+            
+        </h3>
+        <h3 style="color: white;">
+                Description:<input type="text">    
+        </h3>
+        <button class="cancel">Cancel</button>
+        <button class="send">Send</button>
+    </div>
+    <div class="refer-page" *ngIf="showLabPage">
+        <h3 style="color: white;">
+            Patient name: {{selectedPatient.name}}
+        
+        </h3>
+        <h3 style="color: white;">
+            Patient ID: {{selectedPatient.id}}
+            
+        </h3>
+        <router-outlet></router-outlet>
+        <div class="test">
+        <div class="test-container">
+            <button>Blood Tests</button>
+            <div class="blood-infections" *ngIf="showBloodInfections">
+                <input type="checkbox">
+                <label for="HIV">HIV</label><br>
+                <input type="checkbox">
+                <label for="Rabies">Rabies</label><br>
+                <input type="checkbox">
+                <label for="Zika">Zika</label><br>
+                <input type="checkbox">
+                <label for="Hepatitis B">Hepatitis C</label><br>
+                <input type="checkbox">
+                <label for="Hepatitis C">Hepatitis C</label><br>
+            </div>
+            
+        </div>
+        <div class="test-container">
+            <button>Stool Tests</button>
+            <div class="blood-infections" *ngIf="showStoolInfections">
+                <input type="checkbox">
+                <label for="Sapovirus">Sapovirus</label><br>
+                <input type="checkbox">
+                <label for="Enterovirus">Enterovirus</label><br>
+                <input type="checkbox">
+                <label for="Adenovirus">Adenovirus</label><br>
+                <input type="checkbox">
+                <label for="Novovirus">Novovirus</label><br>
+                <input type="checkbox">
+                <label for="Rotavirus">Rotavirus</label><br>
+            </div>
+        </div>
+        </div>
+        
+     
+
+        
+        <button class="cancel">Cancel</button>
+        <button class="send">Send</button>
+    </div>
+</div>

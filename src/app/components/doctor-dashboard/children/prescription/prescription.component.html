@@ -1,0 +1,51 @@
+<div class="prescription-container">
+    <h1 class="header">Patient Prescription Details</h1>
+    <table>
+      <tbody>
+        <tr>
+          <th>dosage</th>
+          <th>frequency</th>
+          <th>duration</th>
+          <th>quantity</th>
+          <th>prescribedDate</th>
+          <th>status</th>
+          <th>notes</th>
+          <th>userId<th>
+          <th>hospitalStaffId</th>
+          
+        </tr>
+        <ng-container *ngFor="let pr of prescription">
+          <tr>
+            <td>
+              {{pr.dosage}}
+            </td>
+            <td>
+              {{pr.frequency}}
+            </td>
+            <td>
+              {{pr.duration}}
+            </td>
+            <td>
+              {{pr.quantity}}
+            </td>
+            <td>
+              {{pr.prescriptionDate}}
+            </td>
+            <td>
+              {{pr.status}}
+            </td>
+            <td>
+              {{pr.notes}}
+            </td>
+            <td>
+              {{pr.useId}}
+            </td>
+            <td>
+              {{pr.hospitalStaffId}}
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  

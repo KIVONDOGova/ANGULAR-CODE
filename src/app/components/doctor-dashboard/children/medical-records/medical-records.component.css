@@ -1,0 +1,30 @@
+.medical-record-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #21a4ad;
+    padding: 40px;
+  }
+  
+  .medical-record-container table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .medical-record-container table tr{
+    height: 50px;
+    border-bottom: 1px solid black;
+  }
+  .medical-record-container table tr th{
+    background-color: black;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+  .medical-record-container table tr td{
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 20px;
+  }

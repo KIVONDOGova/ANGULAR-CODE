@@ -1,0 +1,24 @@
+.allergies-container {
+    padding: 20px;
+  }
+  
+  .allergies-container table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .allergies-container table tr{
+    height: 50px;
+    border-bottom: 1px solid black;
+  }
+  .allergies-container table tr th{
+    background-color: black;
+    color: white;
+    text-align: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+  .allergies-container table tr td{
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 20px;
+  }

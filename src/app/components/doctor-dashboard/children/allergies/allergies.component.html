@@ -1,0 +1,42 @@
+<div class="allergies-container">
+    <h1 class="page-title">Patient Allergies</h1>
+    <table>
+      <tbody>
+        <tr>
+          <th>userId</th>
+          <th>allergen</th>
+          <th>reactionType</th>
+          <th>treatmentMedication</th>
+          <th>severity</th>
+          <th>date</th>
+          <th>notes</th>
+        </tr>
+        <ng-container *ngFor="let al of allergies">
+          <tr>
+            <td>
+              {{al.userId}}
+            </td>
+            <td>
+              {{al.allergen}}
+            </td>
+            <td>
+              {{al.reactionType}}
+            </td>
+            <td>
+              {{al.treatmentMedication}}
+            </td>
+            <td>
+              {{al.severity}}
+            </td>
+            <td>
+              {{al.date}}
+            </td>
+            <td>
+              {{al.notes}}
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,17 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(77,166,201);
+}
+.sidenav-container {
+    height: 100vh;
+  }
+  
+  mat-sidenav {
+    width: 240px;
+  }
+  
+  mat-sidenav-content {
+    padding: 20px;
+  }
+  

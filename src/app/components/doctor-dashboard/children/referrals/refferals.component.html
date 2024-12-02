@@ -1,0 +1,47 @@
+<!-- Sidebar Button -->
+<div class="sidebar">
+  <button class="referral-btn" (click)="fetchReferrals('doctorId')">Referrals</button>
+</div>
+
+<!-- Patient List -->
+<div *ngIf="!referralPage" class="patient-list">
+  <h2>Patients to Be Referred</h2>
+  <ul>
+    <li
+      *ngFor="let patient of patients"
+      [class.referred]="patient.referred"
+     >
+      {{ patient.name }}
+    </li>
+  </ul>
+</div>
+
+<!-- Referral Form -->
+<div *ngIf="referralPage" class="referral-form">
+  <h2>Refer Patient: {{ selectedPatient?.name }}</h2>
+  <p><strong>Gender:</strong> {{ selectedPatient?.gender }}</p>
+  <p><strong>Nationality:</strong> {{ selectedPatient?.nationality }}</p>
+  <p><strong>Date of Birth:</strong> {{ selectedPatient?.dob }}</p>
+  <p><strong>Age:</strong> {{ selectedPatient?.age }}</p>
+
+  <!-- Hospital Selection -->
+  <h3>Select Hospital</h3>
+  <ul>
+    <li *ngFor="let hospital of hospitals">
+      <label>
+        <input type="radio" [value]="hospital" name="hospital" [(ngModel)]="selectedHospital" />
+        {{ hospital }}
+      </label>
+    </li>
+  </ul>
+
+  <!-- Condition Description -->
+  <h3>Condition Description</h3>
+  <textarea [(ngModel)]="referralData.conditionDescription" placeholder="Enter condition details"></textarea>
+
+  <!-- Buttons -->
+  <div class="form-buttons">
+    <button type="button" class="cancel-btn" (click)="cancelReferral()">Cancel</button>
+    <button type="button" class="refer-btn" (click)="submitReferral()">Refer</button>
+  </div>
+</div>

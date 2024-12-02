@@ -1,0 +1,25 @@
+<div class="appointments-container">
+  <h1 class="page-title">Patient Appointments</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Appointment Type</th>
+        <th>Start Time</th>
+        <th>Status</th>
+        <th>Submitted At</th>
+        <th>Submitted By Doctor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let ap of appointments">
+        <tr>
+          <td>{{ ap.appointmentType }}</td>
+          <td>{{ ap.startTime | date: 'short' }}</td>
+          <td>{{ ap.status }}</td>
+          <td>{{ ap.submittedAt | date: 'short' }}</td>
+          <td>{{ ap.submittedBy }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

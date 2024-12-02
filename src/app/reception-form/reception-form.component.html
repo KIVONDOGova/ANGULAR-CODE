@@ -1,0 +1,18 @@
+<div>
+    <h3>Registered Patients</h3>
+    <!-- List of patients -->
+    <ul>
+      <li *ngFor="let patient of patients">
+        {{ patient.name }} - ID: {{ patient.id }}
+      </li>
+    </ul>
+  
+    <!-- Search section -->
+    <input type="text" [formControl]='idInput'placeholder="Enter Patient ID" />
+    <button (click)="getPatient()">Search</button>
+    <div>
+        <small style="color: red;" *ngIf="showErr">User not found</small>
+        {{patient.data.firstName}}  {{patient.data.lastName}}
+    </div>
+  </div>
+  

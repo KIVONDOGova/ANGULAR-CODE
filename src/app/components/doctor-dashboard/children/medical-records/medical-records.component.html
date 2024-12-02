@@ -1,0 +1,42 @@
+<div class="medical-record-container">
+    <header>
+      <h1>Medical Records</h1>
+      <table>
+        <tbody>
+          <tr>
+            <th>notes</th>
+            <th>diagnosis</th>
+            <th>treatment</th>
+            <th>submittedAt</th>
+            <th>submittedBy</th>
+            <th>hospitalName</th>
+            
+          </tr>
+          <ng-container *ngFor="let mr of medicalrecords">
+            <tr>
+              <td>
+                {{mr.notes}}
+              </td>
+              <td>
+                {{mr.diagnosis}}
+              </td>
+              <td>
+                {{mr.treatment}}
+              </td>
+              <td>
+                {{mr.submittedAt}}
+              </td>
+              <td>
+                {{mr.submittedBy}}
+              </td>
+              <td>
+                {{mr.hospitalName}}
+              </td>
+            
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </header>
+  </div>
+  

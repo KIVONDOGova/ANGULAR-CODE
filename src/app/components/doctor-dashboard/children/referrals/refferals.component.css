@@ -1,0 +1,108 @@
+/* Sidebar Styles */
+.sidebar {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+.referral-btn {
+  display: block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.referral-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Patient List Styles */
+.patient-list {
+  padding: 20px;
+}
+
+.patient-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.patient-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.patient-list li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.patient-list li.referred {
+  background-color: #dff0d8;
+}
+
+/* Referral Form Styles */
+.referral-form {
+  padding: 20px;
+}
+
+.referral-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.referral-form p {
+  margin: 5px 0;
+}
+
+.referral-form ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.referral-form ul li {
+  margin: 5px 0;
+}
+
+.referral-form textarea {
+  width: 100%;
+  height: 100px;
+  margin: 10px 0;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+}
+
+.refer-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.refer-btn:hover {
+  background-color: #218838;
+}

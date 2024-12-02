@@ -1,0 +1,88 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color:  rgb(77,166,201);
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+.container {
+  padding: 20px;
+  font-family: inherit;
+  background-color:rgb(77,166,201);
+  min-height: 100vh; 
+}
+
+.header {
+  text-align: center;
+}
+
+.search-bar {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.patient-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patient-list th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.patient-list tr:hover {
+  background-color:  #007bff;
+  cursor: pointer;
+}
+
+.patient-list tr.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.patient-details {
+  margin: 20px 0;
+}
+
+.imaging-tests h4 {
+  margin-top: 20px;
+}
+
+.imaging-tests label {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+button {
+  margin: 10px 0;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}

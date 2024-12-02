@@ -1,0 +1,106 @@
+<div class="container">
+  <h1 class="header">Lab Dashboard</h1>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search by Patient ID..."
+      (input)="searchPatient($event)"
+    />
+  </div>
+
+  <!-- Patient List -->
+  <div class="patient-list">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>DOB</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let patient of patients"
+          (click)="selectPatient(patient)"
+          [class.selected]="patient === selectedPatient"
+        >
+          <td>{{ patient.id }}</td>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.gender }}</td>
+          <td>{{ patient.dob }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Patient Details -->
+  <div *ngIf="selectedPatient" class="patient-details">
+    <h3>Selected Patient: {{ selectedPatient.name }}</h3>
+    <p>ID: {{ selectedPatient.id }}</p>
+    <p>Age: {{ selectedPatient.age }}</p>
+    <p>Gender: {{ selectedPatient.gender }}</p>
+    <p>DOB: {{ selectedPatient.dob }}</p>
+
+    <button (click)="showLabTests = !showLabTests">Lab Tests</button>
+  </div>
+
+  <!-- Lab Tests Section -->
+  <div *ngIf="showLabTests" class="lab-tests">
+    <h4>Stool Tests</h4>
+    <div *ngFor="let test of ['rotavirus', 'novovirus', 'adenovirus', 'enterovirus', 'sapovirus']">
+      <label>
+        <input type="checkbox" [formControlName]="test" />
+        {{ test | titlecase }}
+      </label>
+      <button (click)="uploadFinding(test)">Attach Finding</button>
+      <input
+        type="file"
+        [id]="test + '-file-input'"
+        (change)="handleFileUpload($event, test)"
+        hidden
+      />
+    </div>
+
+    <h4>Blood Tests</h4>
+    <div *ngFor="let test of ['hiv', 'hepatitisB', 'hepatitisC', 'zika', 'rabies']">
+      <label>
+        <input type="checkbox" [formControlName]="test" />
+        {{ test | titlecase }}
+      </label>
+      <button (click)="uploadFinding(test)">Attach Finding</button>
+      <input
+        type="file"
+        [id]="test + '-file-input'"
+        (change)="handleFileUpload($event, test)"
+        hidden
+      />
+    </div>
+
+    <h4>UTI Tests</h4>
+    <div *ngFor="let test of ['adenovirus', 'bkVirus', 'jcVirus', 'herpesSimplex', 'zika']">
+      <label>
+        <input type="checkbox" [formControlName]="test" />
+        {{ test | titlecase }}
+      </label>
+      <button (click)="uploadFinding(test)">Attach Finding</button>
+      <input
+        type="file"
+        [id]="test + '-file-input'"
+        (change)="handleFileUpload($event, test)"
+        hidden
+      />
+    </div>
+
+    <button (click)="submitTests()">Submit Tests</button>
+  </div>
+
+  <!-- Alert Message -->
+  <div *ngIf="alertMessage" class="alert">
+    {{ alertMessage }}
+  </div>
+</div>

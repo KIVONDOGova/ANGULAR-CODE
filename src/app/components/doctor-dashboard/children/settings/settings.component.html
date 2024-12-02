@@ -1,0 +1,23 @@
+
+
+<div  class="user-info">
+  <h2>User Information</h2>
+  <p><strong>Name:</strong> {{ user.name }}</p>
+  <p><strong>Role:</strong> {{ user.role }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>Phone:</strong> {{ user.phone }}</p>
+  <p><strong>Gender:</strong> {{ user.gender }}</p>
+
+  <div class="button-container">
+    <button class="edit-btn">EDIT</button>
+    <button class="change-password-btn" (click)="update()">CHANGE PASSWORD</button>
+    <button class="delete-account-btn">DELETE ACCOUNT</button>
+  </div>
+  <div class="change-pass" *ngIf="showUpdate">
+    <input type="text"placeholder="Old password"><br>
+    <input type="text"placeholder="Set password"><br>
+    <input type="text"placeholder="Confirm password"><br>
+    <button class="close-btn" (click)="update()">Close</button>
+    <button class="submit-btn">Submit</button>
+  </div>
+</div>
